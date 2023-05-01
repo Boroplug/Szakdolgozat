@@ -1,0 +1,31 @@
+{% include 'header.html.twig' %}
+
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="col-sm-6">
+        <h1 class="display-3 text-center mb-5"> új kategória</h1>
+            <form action="/categoryAdd" method="POST">
+
+
+                <div class="form-group">
+                    <label for="nev">Kategória Név</label>
+                    <input type="text" class="form-control" name="nev" id="nev" required>
+                </div>      
+
+
+                <div class="form-check mt-3">
+                    <input type="checkbox" name="deleted" id="deleted" >
+                    <label for="deleted">Törölt</label>
+                </div>
+
+
+                <div class="form-group mt-3 justify-content-between d-flex">
+                    <a href="javascript:history.go(-1)" class="btn btn-warning"> <i class="fa-solid fa-arrow-left"></i> Vissza</a>
+                    <button type="submit" class="btn btn-success text-white" name="save"> <i class="fa-solid fa-floppy-disk"></i> MENT </button>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% include 'footer.html.twig' %}

@@ -1,0 +1,30 @@
+{% include 'header.html.twig' %}
+ <div class="container">
+        <h1 class="display-3 text-center mt-5">kategóriák</h1>
+        <table class="table table-hover mt-5 text-center">
+        <thead class="sticky-top table-info">
+            <tr>
+                <th>ID</th>
+                <th>megnevezés</th>
+                <th>törölt</th>                
+                <th>Műveletek</th>
+            </tr>
+        </thead>
+            {% for category in categories %}
+            <tr>
+                <td>{{category.id}}</td>
+                <td>{{category.nev}}</td>
+                
+                <td>{{category.deleted ? 'Igen': 'Nem'}}</td>
+                <td>
+                    <a class='btn btn-warning' href='categoryEdit/{{category.id}}'> <i class="fa-solid fa-edit"></i> Módosít</a>
+                    <a class='btn btn-danger' href='categoryDelete/{{category.id}}'> <i class="fa-solid fa-trash"></i> Töröl</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    
+   
